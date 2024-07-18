@@ -34,9 +34,12 @@ def data_collect(start, end, session):
                 if not result.get('items', []):
                     break
 
-                # 填入用户基本信息
+                # 用户基本信息
                 users = []
                 users.extend(result.get('items', []))
+
+                # 项目信息
+                repos_info = []
 
                 # 获取用户详细信息
                 index = 0
@@ -45,7 +48,6 @@ def data_collect(start, end, session):
                     if index >= len(users):
                         break
                     user = users[index]
-                    repos_info = []
                     username = user['login']
                     # 获取用户详细信息
                     details = user_details(username)
@@ -58,25 +60,17 @@ def data_collect(start, end, session):
                     # 获取用户项目信息
                     repo_page = 1
                     # 项目star数过滤后基本都在100以内，只需获取第一页结果即可，减少访问次数
-                    while repo_page == 1:
-                        # 获取项目信息
-                        repos = user_repos(username, repo_page)
-                        # 用户没有满足条件的项目(可能会漏掉部分用户项目)
-                        if not repos:
-                            break
-                        # 项目获取完毕
-                        if not repos.get('items', []):
-                            break
-
+                    repos = user_repos(username, repo_page)
+                    # 项目不为空
+                    if repos:
                         repos = repos.get('items', [])
                         for repo in repos:
                             if repo.get('language'):
                                 repo_info = get_repo_info(repo)
                                 repo_info.update(user_info)
                                 repos_info.append(repo_info)
-                        repo_page += 1
-                    save_to_database(repos_info, session)
                     index += 1
+                save_to_database(repos_info, session)
                 page += 1
             logger.info(f"{since.strftime('%Y-%m-%d')}——{until.strftime('%Y-%m-%d')} Data collection is complete!")
             # 设置时间区间(因为用户注册密度不均匀，可能10天内1000名用户注册，后面可能1个月才注册1000名，尽可能使区间维持在1个月)
