@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ projectsname }}</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .pagination {
+      text-align: center;
+      padding: 20px 0;
+    }
+    .pagination a {
+      padding: 8px 16px;
+      background-color: #f1f1f1;
+      border: 1px solid #ddd;
+      color: #333;
+      text-decoration: none;
+      margin: 0 5px;
+    }
+    .pagination a:hover {
+      background-color: #ddd;
+    }
+    .pagination strong {
+      padding: 8px 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: 1px solid #4CAF50;
+      margin: 0 5px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 12px 15px;
+      text-align: left;
+    }
+    th {
+      background-color: #4CAF50;
+      color: white;
+    }
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+    tr:hover {
+      background-color: #ddd;
+    }
+    a {
+      color: #007BFF;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+<h1 style="text-align: center;">{{ projectsname }}</h1>
+<table>
+  <thead>
+  <tr>
+    <th>序号</th>
+    <th>项目地址</th>
+    <th>项目简介</th>
+    <th>Star数量</th>
+    <th>Fork数量</th>
+    <th>开发语言</th>
+    <th>项目大小</th>
+    <th>作者昵称</th>
+    <th>作者姓名</th>
+    <th>作者所在地</th>
+    <th>作者粉丝数</th>
+  </tr>
+  </thead>
+  <tbody>
+  {% for project in projects %}
+  <tr>
+    <td>{{ loop.index }}</td>
+    <td><a href="{{ project.项目地址 }}" target="_blank">{{ project.项目地址 }}</a></td>
+    <td>{{ project.项目简介 }}</td>
+    <td>{{ project.Star数量 }}</td>
+    <td>{{ project.Fork数量 }}</td>
+    <td>{{ project.开发语言 }}</td>
+    <td>{{ project.项目大小 }}</td>
+    <td>{{ project.作者昵称 }}</td>
+    <td>{{ project.作者姓名 }}</td>
+    <td>{{ project.作者所在地 }}</td>
+    <td>{{ project.作者粉丝数 }}</td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+<div class="pagination">
+  {% if pagination.has_prev %}
+  <a href="{{ url_for(projectsurl, page=pagination.prev_num) }}">上一页</a>
+  {% endif %}
+  {% for page_num in pagination.iter_pages() %}
+  {% if page_num %}
+  {% if page_num == pagination.page %}
+  <strong>{{ page_num }}</strong>
+  {% else %}
+  <a href="{{ url_for(projectsurl, page=page_num) }}">{{ page_num }}</a>
+  {% endif %}
+  {% else %}
+  <span class="ellipsis">...</span>
+  {% endif %}
+  {% endfor %}
+  {% if pagination.has_next %}
+  <a href="{{ url_for(projectsurl, page=pagination.next_num) }}">下一页</a>
+  {% endif %}
+</div>
+</body>
+</html>
