@@ -12,6 +12,9 @@ class CONFIG:
     start = datetime(XXXX, XX, XX)
     end = datetime(XXXX, XX, XX)
 
+    location1 = "China"
+    location2 = "中国"
+
 # 收集到的常用Header
 my_headers = [
     "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36",

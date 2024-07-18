@@ -1,11 +1,12 @@
 from data.utils import location_users, user_repos, user_details, get_user_info, get_repo_info
 from data.save import save_to_database
 from log_config import logger
+from config import CONFIG
 from datetime import timedelta
 
 def data_collect(start, end, session):
-    location1 = "China"
-    location2 = "中国"
+    location1 = CONFIG.location1
+    location2 = CONFIG.location2
     days = 256
     # 由于github只提供前1000条信息，所以通过设置创建账号的时间区间控制用户数量在1000以内
     since = start
