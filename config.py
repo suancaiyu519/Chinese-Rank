@@ -2,15 +2,15 @@ from datetime import datetime
 
 class CONFIG:
     # 数据库配置
-    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:123456@localhost:3306/test'
+    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://用户名:密码@端口/仓库名'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
     # GitHub TOKEN配置(可扩充访问速率为5000次/h，否则速率为60次/h)
-    TOKEN = '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'
+    TOKEN = 'XXXXXXXXXX'
 
     # 设置收集的时间区间
-    start = datetime(2008, 2, 27)
-    end = datetime(2008, 6, 1)
+    start = datetime(XXXX, XX, XX)
+    end = datetime(XXXX, XX, XX)
 
 # 收集到的常用Header
 my_headers = [
