@@ -2,15 +2,15 @@ from datetime import datetime
 
 class CONFIG:
     # 数据库配置
-    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://用户名:密码@端口/仓库名'
+    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:123456@localhost:3306/test'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
     # GitHub TOKEN配置(可扩充访问速率为5000次/h，否则速率为60次/h)
-    TOKEN = 'XXXXXXXXXX'
+    TOKEN = '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'
 
     # 设置收集的时间区间
-    start = datetime(XXXX, XX, XX)
-    end = datetime(XXXX, XX, XX)
+    start = datetime(2008, 2, 27)
+    end = datetime(2008, 6, 1)
 
     location1 = "China"
     location2 = "中国"
