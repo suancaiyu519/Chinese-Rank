@@ -72,6 +72,8 @@ def data_collect(start, end, session):
                     index += 1
                 save_to_database(repos_info, session)
                 page += 1
+                if page == 11:
+                    break
             logger.info(f"{since.strftime('%Y-%m-%d')}——{until.strftime('%Y-%m-%d')} Data collection is complete!")
             # 设置时间区间(因为用户注册密度不均匀，可能10天内1000名用户注册，后面可能1个月才注册1000名，尽可能使区间维持在1个月)
             if days < 32:
