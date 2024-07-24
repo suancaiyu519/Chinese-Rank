@@ -18,6 +18,7 @@ def save_to_database(data, session):
             existing_project.作者姓名 = repo_info.get('作者姓名')
             existing_project.作者所在地 = repo_info.get('作者所在地')
             existing_project.作者粉丝数 = repo_info.get('作者粉丝数')
+            existing_project.项目创建时间 = repo_info.get('项目创建时间')
         else:
             # 否则添加新数据
             project = Project(
@@ -30,7 +31,8 @@ def save_to_database(data, session):
                 作者昵称=repo_info.get('作者昵称'),
                 作者姓名=repo_info.get('作者姓名'),
                 作者所在地=repo_info.get('作者所在地'),
-                作者粉丝数=repo_info.get('作者粉丝数')
+                作者粉丝数=repo_info.get('作者粉丝数'),
+                项目创建时间=repo_info.get('项目创建时间')
             )
             session.add(project)
         session.commit()

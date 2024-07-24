@@ -1,3 +1,4 @@
+from datetime import datetime
 import requests
 import random
 import time
@@ -93,7 +94,9 @@ def get_repo_info(repo):
         "Star数量": repo.get('stargazers_count'),
         "Fork数量": repo.get('forks_count'),
         "开发语言": repo.get('language'),
-        "项目大小": str(repo.get('size'))+"KB"
+        "项目大小": repo.get('size'),
+        "项目创建时间": datetime.strptime(repo.get('created_at'), '%Y-%m-%dT%H:%M:%SZ')
+
     }
 
 

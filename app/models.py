@@ -10,7 +10,7 @@ class Projects(db.Model):
     Star数量 = db.Column(db.Integer)
     Fork数量 = db.Column(db.Integer)
     开发语言 = db.Column(db.String(50))
-    项目大小 = db.Column(db.String(50))
+    项目大小 = db.Column(db.Integer)
     作者昵称 = db.Column(db.String(255))
     作者姓名 = db.Column(db.String(255))
     作者所在地 = db.Column(db.String(255))

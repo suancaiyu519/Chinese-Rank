@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Text
+from sqlalchemy import Column, Integer, String, Text, DateTime
 from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
@@ -11,9 +11,10 @@ class Project(Base):
     Star数量 = Column(Integer)
     Fork数量 = Column(Integer)
     开发语言 = Column(String(50))
-    项目大小 = Column(String(50))
+    项目大小 = Column(Integer)
     作者昵称 = Column(String(255))
     作者姓名 = Column(String(255))
     作者所在地 = Column(String(255))
     作者粉丝数 = Column(Integer)
+    项目创建时间 = Column(DateTime)
 
