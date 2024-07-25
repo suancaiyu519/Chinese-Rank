@@ -8,6 +8,7 @@ def save_to_database(data, session):
 
         if existing_project:
             # 若已存在，则更新
+            existing_project.项目名称 = repo_info.get('项目名称')
             existing_project.项目地址 = repo_info.get('项目地址')
             existing_project.项目简介 = repo_info.get('项目简介')
             existing_project.Star数量 = repo_info.get('Star数量')
@@ -22,6 +23,7 @@ def save_to_database(data, session):
         else:
             # 否则添加新数据
             project = Project(
+                项目名称=repo_info.get('项目名称'),
                 项目地址=repo_info.get('项目地址'),
                 项目简介=repo_info.get('项目简介'),
                 Star数量=repo_info.get('Star数量'),

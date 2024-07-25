@@ -6,6 +6,7 @@ Base = declarative_base()
 class Project(Base):
     __tablename__ = 'projects'
     id = Column(Integer, primary_key=True, autoincrement=True)
+    项目名称 = Column(String(255))
     项目地址 = Column(String(255), unique=True)
     项目简介 = Column(Text)
     Star数量 = Column(Integer)

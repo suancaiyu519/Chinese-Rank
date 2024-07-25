@@ -5,6 +5,7 @@ db = SQLAlchemy()
 class Projects(db.Model):
     __tablename__ = 'projects'
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    项目名称 = db.Column(db.String(255))
     项目地址 = db.Column(db.String(255), unique=True)
     项目简介 = db.Column(db.Text)
     Star数量 = db.Column(db.Integer)

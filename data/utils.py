@@ -89,6 +89,7 @@ def get_user_info(details):
 # 填入项目具体信息
 def get_repo_info(repo):
     return {
+        "项目名称": repo.get('name'),
         "项目地址": repo.get('html_url'),
         "项目简介": repo.get('description'),
         "Star数量": repo.get('stargazers_count'),
@@ -96,7 +97,6 @@ def get_repo_info(repo):
         "开发语言": repo.get('language'),
         "项目大小": repo.get('size'),
         "项目创建时间": datetime.strptime(repo.get('created_at'), '%Y-%m-%dT%H:%M:%SZ')
-
     }
 
 
