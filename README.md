@@ -1,7 +1,7 @@
 # Github 国内项目收集（data目录)
 介绍：
 
-    通过github提供的api，查询location为China或中国的用户，并收集用户stars>=100以及开发语言不为空的仓库项目存入数据库
+    通过github提供的api，查询location为中国的用户，并收集用户stars>=100以及开发语言不为空的仓库项目存入数据库
 运行：
 
     python data/main.py（程序会按周期重新收集项目）
