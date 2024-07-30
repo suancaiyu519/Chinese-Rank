@@ -1,0 +1,105 @@
+body {
+      font-family: Arial, sans-serif;
+      margin: 0; /* 移除默认的边距 */
+      padding: 0; /* 移除默认的内边距 */
+}
+table {
+    width: 100%; /* 表格宽度占满其父容器 */
+    border-collapse: collapse;
+    margin: 0 auto; /* 居中显示 */
+    table-layout: fixed; /* 固定表格布局 */
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px 15px;
+    text-align: left;
+    word-wrap: break-word; /* 自动换行 */
+    white-space: normal; /* 允许内容换行 */
+}
+/* 序号列 */
+th:first-child, td:first-child {
+    width: 40px; /* 较小宽度 */
+}
+
+/* 项目名称列 */
+th:nth-child(2), td:nth-child(2) {
+    width: 80px; /* 中等宽度 */
+}
+
+/* 项目简介列 */
+th:nth-child(3), td:nth-child(3) {
+    width: 250px; /* 较大宽度 */
+}
+
+/* Star数量、Fork数量 */
+th:nth-child(4), td:nth-child(4),
+th:nth-child(5), td:nth-child(5){
+    width: 50px; /* 较小宽度 */
+}
+/* 作者粉丝数列 */
+th:nth-child(11), td:nth-child(11) {
+    width: 70px; /* 较小宽度 */
+}
+
+/* 开发语言列 */
+th:nth-child(6), td:nth-child(6) {
+    width: 65px; /* 中等宽度 */
+}
+
+/* 项目大小列 */
+th:nth-child(7), td:nth-child(7) {
+    width: 60px; /* 中等宽度 */
+}
+
+/* 作者昵称、作者姓名列 */
+th:nth-child(8), td:nth-child(8),
+th:nth-child(9), td:nth-child(9) {
+    width: 70px; /* 中等宽度 */
+}
+
+/* 作者所在地列 */
+th:nth-child(10), td:nth-child(10) {
+    width: 70px; /* 中等宽度 */
+}
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+tr:hover {
+    background-color: #ddd;
+}
+a {
+    color: #007BFF;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+.pagination {
+    text-align: center;
+    padding: 20px 0;
+}
+.pagination a {
+    padding: 8px 16px;
+    background-color: #f1f1f1;
+    border: 1px solid #ddd;
+    color: #333;
+    text-decoration: none;
+    margin: 0 5px;
+}
+.pagination a:hover {
+    background-color: #ddd;
+}
+.pagination strong {
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: 1px solid #4CAF50;
+    margin: 0 5px;
+}
+.ellipsis {
+    margin: 0 5px;
+}

@@ -3,59 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>{{ projectsname }}</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-    }
-    .pagination {
-      text-align: center;
-      padding: 20px 0;
-    }
-    .pagination a {
-      padding: 8px 16px;
-      background-color: #f1f1f1;
-      border: 1px solid #ddd;
-      color: #333;
-      text-decoration: none;
-      margin: 0 5px;
-    }
-    .pagination a:hover {
-      background-color: #ddd;
-    }
-    .pagination strong {
-      padding: 8px 16px;
-      background-color: #4CAF50;
-      color: white;
-      border: 1px solid #4CAF50;
-      margin: 0 5px;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    th, td {
-      border: 1px solid #ddd;
-      padding: 12px 15px;
-      text-align: left;
-    }
-    th {
-      background-color: #4CAF50;
-      color: white;
-    }
-    tr:nth-child(even) {
-      background-color: #f2f2f2;
-    }
-    tr:hover {
-      background-color: #ddd;
-    }
-    a {
-      color: #007BFF;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
+  <link rel="stylesheet" type="text/css" href="../static/style.css">
 </head>
 <body>
 <h1 style="text-align: center;">{{ projectsname }}</h1>
@@ -63,7 +11,7 @@
   <thead>
   <tr>
     <th>序号</th>
-    <th>项目地址</th>
+    <th>项目名称</th>
     <th>项目简介</th>
     <th>Star数量</th>
     <th>Fork数量</th>
@@ -79,7 +27,7 @@
   {% for project in projects %}
   <tr>
     <td>{{ loop.index }}</td>
-    <td><a href="{{ project.项目地址 }}" target="_blank">{{ project.项目地址 }}</a></td>
+    <td><a href="{{ project.项目地址 }}" target="_blank">{{ project.项目名称 }}</a></td>
     <td>{{ project.项目简介 }}</td>
     <td>{{ project.Star数量 }}</td>
     <td>{{ project.Fork数量 }}</td>

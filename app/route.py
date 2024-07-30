@@ -4,7 +4,7 @@ from app.models import Projects
 def register_routes(app, db):
     @app.route('/')
     def rank():
-        name = "Github projects"
+        name = "Github 国内项目"
         url = 'rank'
         page = request.args.get("page", default=1, type=int)
         per_page = 1000
