@@ -13,7 +13,7 @@ class CONFIG:
     end = datetime.today()
 
     # 设置收集地区
-    location = {"XX", "XX"}
+    location = ["XX", "XX"]
 
     # 设置收集周期(天数)
     cycles = X
