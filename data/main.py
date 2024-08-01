@@ -19,8 +19,8 @@ if __name__ == '__main__':
     try:
         Base.metadata.create_all(engine)
         data_collect(start, end, session)
+        logger.info("Github 国内项目收集完成!")
     except Exception as e:
         logger.error(f"An error occurred: {e}")
     finally:
-        logger.info("Github 国内项目收集完成!")
         session.close()
