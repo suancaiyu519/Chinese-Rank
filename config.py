@@ -15,7 +15,5 @@ class CONFIG:
     # 设置收集地区
     location = ["XX", "XX", ...]
 
-    # 设置收集周期(天数)
-    cycles = X
 
 
