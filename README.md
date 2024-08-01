@@ -4,7 +4,7 @@
     通过github提供的api，查询location为中国的用户，并收集用户stars>=100以及开发语言不为空的仓库项目存入数据库
 运行：
 
-    python data/main.py（程序会按周期重新收集项目）
+    python data/main.py (可通过linux的crontab定时任务或windows系统自带的任务计划程序来定时收集，推荐定时7天或更长)
 
 # Github 国内项目列表（app目录)
 介绍：
@@ -24,8 +24,6 @@
     2、填写github token，增加github api访问次数
     3、填写时间区间，在区间内收集所需数据
     4、填写想要收集的地区
-    5、填写收集周期(天)
-      (保证收集周期数大于收集时间，推荐7天)
 
 # Metabase仪表盘示例
 ![dashboard.png](dashboard.png)
