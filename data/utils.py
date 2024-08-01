@@ -1,6 +1,5 @@
 from datetime import datetime
 import requests
-import random
 import time
 from log_config import logger
 from config import CONFIG
