@@ -16,5 +16,6 @@ class Projects(db.Model):
     作者姓名 = db.Column(db.String(255))
     作者所在地 = db.Column(db.String(255))
     作者粉丝数 = db.Column(db.Integer)
+    项目创建时间 = db.Column(db.DateTime)
 
 
